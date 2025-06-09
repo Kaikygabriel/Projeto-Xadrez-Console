@@ -1,0 +1,15 @@
+C:\Users\kaiky\Downloads\kaka\Projeto-Xadrez-Console\Xadrez\Xadrez\bin\Debug\net9.0\Xadrez.exe
+C:\Users\kaiky\Downloads\kaka\Projeto-Xadrez-Console\Xadrez\Xadrez\bin\Debug\net9.0\Xadrez.deps.json
+C:\Users\kaiky\Downloads\kaka\Projeto-Xadrez-Console\Xadrez\Xadrez\bin\Debug\net9.0\Xadrez.runtimeconfig.json
+C:\Users\kaiky\Downloads\kaka\Projeto-Xadrez-Console\Xadrez\Xadrez\bin\Debug\net9.0\Xadrez.dll
+C:\Users\kaiky\Downloads\kaka\Projeto-Xadrez-Console\Xadrez\Xadrez\bin\Debug\net9.0\Xadrez.pdb
+C:\Users\kaiky\Downloads\kaka\Projeto-Xadrez-Console\Xadrez\Xadrez\obj\Debug\net9.0\Xadrez.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kaiky\Downloads\kaka\Projeto-Xadrez-Console\Xadrez\Xadrez\obj\Debug\net9.0\Xadrez.AssemblyInfoInputs.cache
+C:\Users\kaiky\Downloads\kaka\Projeto-Xadrez-Console\Xadrez\Xadrez\obj\Debug\net9.0\Xadrez.AssemblyInfo.cs
+C:\Users\kaiky\Downloads\kaka\Projeto-Xadrez-Console\Xadrez\Xadrez\obj\Debug\net9.0\Xadrez.csproj.CoreCompileInputs.cache
+C:\Users\kaiky\Downloads\kaka\Projeto-Xadrez-Console\Xadrez\Xadrez\obj\Debug\net9.0\Xadrez.sourcelink.json
+C:\Users\kaiky\Downloads\kaka\Projeto-Xadrez-Console\Xadrez\Xadrez\obj\Debug\net9.0\Xadrez.dll
+C:\Users\kaiky\Downloads\kaka\Projeto-Xadrez-Console\Xadrez\Xadrez\obj\Debug\net9.0\refint\Xadrez.dll
+C:\Users\kaiky\Downloads\kaka\Projeto-Xadrez-Console\Xadrez\Xadrez\obj\Debug\net9.0\Xadrez.pdb
+C:\Users\kaiky\Downloads\kaka\Projeto-Xadrez-Console\Xadrez\Xadrez\obj\Debug\net9.0\Xadrez.genruntimeconfig.cache
+C:\Users\kaiky\Downloads\kaka\Projeto-Xadrez-Console\Xadrez\Xadrez\obj\Debug\net9.0\ref\Xadrez.dll
