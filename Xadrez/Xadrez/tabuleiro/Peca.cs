@@ -2,15 +2,15 @@ using Xadrez.tabuleiro.EnumColor;
 
 namespace Xadrez.tabuleiro;
 
-public class Peca
+public abstract class Peca
 {
     public Peca(){}
 
-    public Peca( EColor color, Posicao posicaoPeca, Tabuleiro tab)
+    public Peca( EColor color, Tabuleiro tab)
     {
         QuantityOfMoviments = 0;
         Color = color;
-        PosicaoPeca = posicaoPeca;
+        PosicaoPeca = null;
         Tab = tab;
     }
 

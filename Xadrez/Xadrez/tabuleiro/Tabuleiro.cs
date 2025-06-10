@@ -1,3 +1,5 @@
+using Xadrez.tabuleiro.Exception;
+
 namespace Xadrez.tabuleiro;
 
 public class Tabuleiro
@@ -17,4 +19,26 @@ public class Tabuleiro
 
     public Peca[,] GetPecas()
         => _pecas;
+
+    public Peca GetPeca(Posicao pos)
+        => _pecas[pos.Line, pos.Colum];
+    public void AddPeca(Peca peca, Posicao posicao)
+    {
+        if(!PosicaoValida(posicao) || !ExistePecaNaPosicao(posicao))
+            throw new DominioException("Error, posição no tabuleiro não existe, ou ja tem outra peça");
+        _pecas[posicao.Line, posicao.Colum] = peca;
+        peca.PosicaoPeca = posicao;
+    }
+
+    bool PosicaoValida(Posicao pos)
+    {
+        if (Line <= pos.Line || Colum <= pos.Colum || pos.Line < 0 || pos.Colum < 0 )
+            return false;
+        return true;
+    }
+
+    bool ExistePecaNaPosicao(Posicao pos)
+        => GetPeca(pos) != null;
 }
+
+
