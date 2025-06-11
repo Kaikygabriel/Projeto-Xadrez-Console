@@ -30,6 +30,16 @@ public class Tabuleiro
         peca.PosicaoPeca = posicao;
     }
 
+    public Peca RemovePeca(Posicao pos)
+    {
+        if (!PosicaoValida(pos))
+            throw new DominioException("Error, posição não valida para retirar peça");
+        if (GetPeca(pos) is null)
+            return null;
+        var peca = GetPeca(pos);
+        _pecas[pos.Line, pos.Colum] = null;
+        return peca;
+    }
     bool PosicaoValida(Posicao pos)
     {
         if (Line <= pos.Line || Colum <= pos.Colum || pos.Line < 0 || pos.Colum < 0 )

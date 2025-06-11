@@ -1,16 +1,19 @@
-﻿using Xadrez.JogoXadrez;
+﻿using Xadrez.Controler;
+using Xadrez.JogoXadrez;
 using Xadrez.tabuleiro;
 using Xadrez.tabuleiro.EnumColor;
 using Xadrez.View;
 
-
-
-var tabu = new Tabuleiro(8,8);
-var rei1 = new Rei(EColor.Preta, tabu);
-var torre = new Torre(EColor.Branca, tabu);
-
-tabu.AddPeca(rei1,new Posicao(1,2));
-tabu.AddPeca(torre,new Posicao(4,1));
-
-TelaTabuleiro.GetTabuleiro(tabu);
+PartidaXadrez partida = new PartidaXadrez();
+while (!partida.Terminada)
+{
+    Console.Clear();
+    TelaTabuleiro.GetTabuleiro(partida.Tabuleiro);
+    Console.WriteLine("Origem");
+    Posicao origem = FunctionJogador.LerPosicaoXadrez().ToPosicao();
+    Console.WriteLine("Destino");
+    Posicao destino = FunctionJogador.LerPosicaoXadrez().ToPosicao();
+    partida.ExcutarMovimento(origem,destino);
+    TelaTabuleiro.GetTabuleiro(partida.Tabuleiro);
+}
 

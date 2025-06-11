@@ -18,4 +18,6 @@ public abstract class Peca
     public EColor Color { get;private protected set; }
     public Posicao PosicaoPeca { get; set; } 
     public Tabuleiro Tab { get; private protected set; }
+
+    public void AddMovimento() => QuantityOfMoviments++;
 }
