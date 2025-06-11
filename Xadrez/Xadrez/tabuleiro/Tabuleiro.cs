@@ -24,7 +24,7 @@ public class Tabuleiro
         => _pecas[pos.Line, pos.Colum];
     public void AddPeca(Peca peca, Posicao posicao)
     {
-        if(!PosicaoValida(posicao) || !ExistePecaNaPosicao(posicao))
+        if(!PosicaoValida(posicao) || ExistePecaNaPosicao(posicao))
             throw new DominioException("Error, posição no tabuleiro não existe, ou ja tem outra peça");
         _pecas[posicao.Line, posicao.Colum] = peca;
         peca.PosicaoPeca = posicao;
