@@ -20,4 +20,5 @@ public abstract class Peca
     public Tabuleiro Tab { get; private protected set; }
 
     public void AddMovimento() => QuantityOfMoviments++;
+    public abstract bool[,] MovimentosPossiveis();
 }

@@ -18,8 +18,7 @@ public class PosicaoXadrez
     public override string ToString()
         => $"{Coluna}{Linha}";
 
-    public Posicao ToPosicao()
-    {
-        return new Posicao(8-Linha ,Coluna - 'a');
-    }
+    public Posicao ToPosicao() 
+        => new Posicao(8-Linha ,Coluna - 'a');
+    
 }

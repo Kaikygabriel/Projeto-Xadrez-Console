@@ -40,14 +40,14 @@ public class Tabuleiro
         _pecas[pos.Line, pos.Colum] = null;
         return peca;
     }
-    bool PosicaoValida(Posicao pos)
+    public bool PosicaoValida(Posicao pos)
     {
         if (Line <= pos.Line || Colum <= pos.Colum || pos.Line < 0 || pos.Colum < 0 )
             return false;
         return true;
     }
 
-    bool ExistePecaNaPosicao(Posicao pos)
+    public bool ExistePecaNaPosicao(Posicao pos)
         => GetPeca(pos) != null;
 }
 

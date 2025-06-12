@@ -9,6 +9,11 @@ public class Posicao
         Line = line;
         Colum = colum;
     }
+    public void DefinirValor(int line, int colum)
+    {
+        Line = line;
+        Colum = colum;
+    }
 
     public int Line { get; set; }
     public int Colum { get; set; }

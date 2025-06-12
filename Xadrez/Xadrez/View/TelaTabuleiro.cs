@@ -3,7 +3,7 @@ using Xadrez.tabuleiro.EnumColor;
 
 namespace Xadrez.View;
 
-public class TelaTabuleiro
+public partial class TelaTabuleiro
 {
     public static void GetTabuleiro(Tabuleiro tab)
     {
@@ -13,10 +13,7 @@ public class TelaTabuleiro
             Console.Write($"{8-i} ");
             for (int j = 0; j < tab.Colum; j++)
             {
-                if (pecas[i, j] is null)
-                    Console.Write("- ");
-                else
-                    ImprimirPeca(pecas[i, j]);
+                ImprimirPeca(pecas[i, j]);
             }
 
             Console.WriteLine();
@@ -27,14 +24,19 @@ public class TelaTabuleiro
 
     static void ImprimirPeca(Peca peca)
     {
-        if (peca.Color == EColor.Preta)
-        {
-            ConsoleColor aux = Console.ForegroundColor;
-            Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.Write($"{peca} ");
-            Console.ForegroundColor = aux;
-        }
+        if (peca is null)
+            Console.Write("- ");
         else
-            Console.Write($"{peca} ");
+        {
+            if (peca.Color == EColor.Preta)
+            {
+                ConsoleColor aux = Console.ForegroundColor;
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.Write($"{peca} ");
+                Console.ForegroundColor = aux;
+            }
+            else
+                Console.Write($"{peca} ");
+        }
     }
 }
