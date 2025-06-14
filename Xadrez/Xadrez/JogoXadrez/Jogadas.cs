@@ -26,6 +26,8 @@ public partial class PartidaXadrez
         p.AddMovimento();
         Peca PecaCapturada = Tabuleiro.RemovePeca(destino);
         Tabuleiro.AddPeca(p,destino);
+        if (PecaCapturada != null)
+            _pecaCapturadas.Add(PecaCapturada);
     }
 
     public void PosicaoValidaOuPecaValida(Posicao pos)

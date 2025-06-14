@@ -42,6 +42,12 @@ public class Program
                 Console.WriteLine(e.Message);
                 Console.ReadLine();
             }
+            catch(Exception e)
+            {
+                Console.WriteLine("Error inesperado");
+                Console.WriteLine(e.Message);
+                Console.ReadLine();
+            }
         }
     }
 }

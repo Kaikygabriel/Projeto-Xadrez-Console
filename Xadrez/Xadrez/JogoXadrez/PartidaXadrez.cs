@@ -10,6 +10,8 @@ public partial class PartidaXadrez
     public int Turno { get; private set; }
     public EColor JogadaAtual { get; private set; }
     public bool Terminada { get;private set; }
+    private HashSet<Peca> _pecaJogo;
+    private HashSet<Peca> _pecaCapturadas;
     
     public PartidaXadrez()
     {
@@ -18,22 +20,41 @@ public partial class PartidaXadrez
         Turno = 1;
         ColocarPecas();
         Terminada = false;
+        _pecaCapturadas = new HashSet<Peca>();
+        _pecaJogo = new HashSet<Peca>();
     }
-    
-    
+
+    public void ColocarNovaPeca(char column, int line, Peca peca)
+    {
+        Tabuleiro.AddPeca(peca,new PosicaoXadrez(column,line).ToPosicao());
+    }
+
+    public HashSet<Peca> pecasCapturadas(EColor cor)
+    {
+        HashSet<Peca> pecas = _pecaCapturadas.Where(x => x.Color == cor).ToHashSet();
+        return  pecas;
+    }
+    public HashSet<Peca> pecasEmJogo(EColor cor)
+    {
+        HashSet<Peca> pecas = _pecaJogo.Where(x => x.Color == cor).ToHashSet(); 
+        pecas.ExceptWith(pecasCapturadas(cor));
+        return pecas;
+    }
     private void ColocarPecas()
     {
-        Tabuleiro.AddPeca(new Rei(EColor.Branca,Tabuleiro),new PosicaoXadrez('e',1).ToPosicao());
-        Tabuleiro.AddPeca(new Torre(EColor.Branca,Tabuleiro),new PosicaoXadrez('d',1).ToPosicao());
-        Tabuleiro.AddPeca(new Torre(EColor.Branca,Tabuleiro),new PosicaoXadrez('d',2).ToPosicao());
-        Tabuleiro.AddPeca(new Torre(EColor.Branca,Tabuleiro),new PosicaoXadrez('e',2).ToPosicao());
-        Tabuleiro.AddPeca(new Torre(EColor.Branca,Tabuleiro),new PosicaoXadrez('f',2).ToPosicao());
-        Tabuleiro.AddPeca(new Bispo(EColor.Branca,Tabuleiro),new PosicaoXadrez('f',1).ToPosicao());
-
-
-        Tabuleiro.AddPeca(new Rei(EColor.Preta,Tabuleiro),new PosicaoXadrez('e',8).ToPosicao());
-        Tabuleiro.AddPeca(new Torre(EColor.Preta,Tabuleiro),new PosicaoXadrez('d',8).ToPosicao());
-        Tabuleiro.AddPeca(new Bispo(EColor.Preta,Tabuleiro),new PosicaoXadrez('f',8).ToPosicao());
+        //peças brancas
+       ColocarNovaPeca('e',1,new Rei(EColor.Branca,Tabuleiro));
+       ColocarNovaPeca('a',1,new Torre(EColor.Branca,Tabuleiro));
+       ColocarNovaPeca('h',1,new Torre(EColor.Branca,Tabuleiro));
+       ColocarNovaPeca('c',1,new Bispo(EColor.Branca,Tabuleiro));
+       ColocarNovaPeca('f',1,new Bispo(EColor.Branca,Tabuleiro));
+       
+       //peças pretas
+       ColocarNovaPeca('e',8,new Rei(EColor.Preta,Tabuleiro));
+       ColocarNovaPeca('a',8,new Torre(EColor.Preta,Tabuleiro));
+       ColocarNovaPeca('h',8,new Torre(EColor.Preta,Tabuleiro));
+       ColocarNovaPeca('c',8,new Bispo(EColor.Preta,Tabuleiro));
+       ColocarNovaPeca('f',8,new Bispo(EColor.Preta,Tabuleiro));
     }
 }
     
